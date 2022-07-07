@@ -7,7 +7,9 @@
 .questions{
     display: none;
 }
-
+.questions{
+    text-align: center;
+}
 .high-score{
     display: none;
     
@@ -25,6 +27,15 @@
 .start{
     background-color: blueviolet;
     color: white;
+}
+
+.question-text{
+    text-align: center;
+}
+.answers{
+    align-items: center;
+    background-color: blueviolet;
+    color: white;  
 }
 .countdown{
     width:100%;

@@ -14,14 +14,21 @@ var timerCount
 var stopwatch 
 var questionIndex = 0
 let question = [
-
-    {question: "Here is the text for the question 1",
-     answers: ["Answer a", "Answer b", "Answer c", "Answer d"],
+    {question: "Commonly used data types DO Not include___",
+     answers: ["strings", "booleans", "alerts", "numbers"],
      correct: 1},
-    {question: "Here is the text for question 2",
-     answers: ["Answer a", "Answer b", "Answer c", "Answer d"],
-     correct: 1}     
-
+    {question: "The condition in an if/else statement is enclosed with ___.",
+     answers: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+     correct: 2}
+     {question: "Arrays in JavaScript can be used to store___",
+     answers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+     correct: 3}
+     {question: "String values must be enclosed within ___ when being assigned to variables",
+     answers: ["commas", "curly brackets", "quotes", "parenthesis"],
+     correct: 2} 
+     {question: "A very useful tool used during development and debugging for printing content to the debugger is",
+     answers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+     correct: 2} 
 ]
 
 
