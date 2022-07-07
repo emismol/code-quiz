@@ -8,6 +8,24 @@
     display: none;
 }
 
+.high-score{
+    display: none;
+    
+}
+
+#start-quiz{
+    border: 10px; 
+    border-color: black;
+    text-align: center;
+}
+
+.page-title{
+    color: blueviolet;
+}
+.start{
+    background-color: blueviolet;
+    color: white;
+}
 .countdown{
     width:100%;
     height:100%;
