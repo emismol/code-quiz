@@ -1,6 +1,7 @@
 var start = document.querySelector('#start-quiz')
 var questions = document.querySelector('.questions')
 var highScores = document.querySelector(".high-scores")
+var initalLog = document.querySelector("#initials")
 
 var questionHeader = document.querySelector(".question-text")
 var answer1 = document.querySelector("#option-a")
@@ -87,7 +88,7 @@ function checkAnswer(buttonClicked){
 }
 
 function endQuiz() {
-
+    
     // Stop timer
     clearInterval(stopwatch);
     
@@ -109,27 +110,68 @@ function endQuiz() {
     */
 
     //Load the high_scores from localstorage.
-    let hs = localStorage.getItem("highScores");
-    if (hs == null) {
+    //let hs = localStorage.getItem("highScores");
+    //if (hs == null) {
         // If it does not exist, create an empty one.
-        hs = [];
-    } else {
-        hs = JSON.parse(hs); // Converts the stored string into a data structure
-    }
+       // hs = [];
+    //} else {
+       // hs = JSON.parse(hs); // Converts the stored string into a data structure
+   // }
 
     // Allow the user/winner, to enter initials.
 
     // Collect the initials from the web page, 
     // when the submit button is pressed, use document.getElementById() to get the initials
-    document.getElementById("initials").addEventListener("click","highScores");
+    document.querySelector("#initialBtn").addEventListener("click", function(event){
+        event.preventDefault();
+
+        let hs;
+        
+        // load the high score array from localstorage
+        let hs_raw = localStorage.getItem('high_scores');
+        if (hs_raw == null) {
+            hs = [];
+        } else {
+            hs = JSON.parse(hs_raw);
+        }
+
+        // add the player's score to the array
+        var user = {
+            playerInitials: initalLog.value.trim(),
+            score: timerCount
+        };
+        hs.push(user);
+
+        // save the array to localstorage
+        localStorage.setItem("high_scores",JSON.stringify(hs));
+
+        // update display of scores
+        let html = "<h2>High Scores</h2><p>";
+        for (obj of hs) {
+            html += obj.playerInitials + " " + obj.score + "<br>";
+        }
+        html += "</p>";
+        document.getElementById("highscorelist").innerHTML = html;
+
+
+        //localStorage.setItem("player",JSON.stringify(user))
+        //console.log(user);
+
+
+        //var getPlayer = localStorage.getItem(player);
+         
+    });
+    //GET ITEM in preventDefault 
+    //after console.log(user); 
+    
     // from the input box, add the initials and the score (timerCount) to the hs object.
-    hs.push({initials:"SHM", score:timerCount})
+    //hs.push({initials:"SHM", score:timerCount})
 
     // Save the new high_scores to localstorage.
     // localStorage.setItem("highScores",hs);
 
     // Display the high scores 
-    highScores.style.display=display;
+    //highScores.style.display=display;
 }
 
 
