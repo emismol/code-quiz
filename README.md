@@ -12,6 +12,7 @@ WHEN the game is over
 THEN I can save my initials and score
 
 Live Link: https://emismol.github.io/code-quiz/
-Git Link: git@github.com:emismol/code-quiz.git
+
+Git Link: https://github.com/emismol/code-quiz.git
 
 ![code quiz](./assets/screenshot.png)
